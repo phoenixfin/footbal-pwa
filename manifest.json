@@ -1,0 +1,17 @@
+{
+    "name": "Champions League",
+    "short_name": "champinfo",
+    "description": "Semua tentang Liga Champion",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#00897B",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "1300x1300",
+            "type": "image/png"
+        }
+    ],
+    "gcm_sender_id": "627520178017"
+}
