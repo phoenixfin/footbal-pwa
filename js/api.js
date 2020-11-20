@@ -61,7 +61,6 @@ function putTeams(data, savedList) {
             const del = document.getElementById("del");
             del.onclick = function () {
                 destroyById(team.id).then(function(team) {
-                    console.log(team)
                     console.log(`Menghapus tim ${team.name} dari daftar favorit`);
                     M.toast({html: `Menghapus ${team.shortName}`, classes: 'rounded'});
                     document.getElementById(team.tla).remove();
@@ -206,7 +205,14 @@ function getTeamById() {
 }
 
 function getSavedTeams() {
-    getAll().then(putSavedTeams);
+    getAll().then(function(teams) {
+        if (teams.length > 0) {
+            putSavedTeams(teams);
+        } else {
+            const html = `Tidak ada data tersimpan`;
+            document.getElementById("teams").innerHTML = html;
+        }
+    });
 }
 
 function getSavedTeamById() {
