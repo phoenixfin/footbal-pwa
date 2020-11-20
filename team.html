@@ -24,7 +24,19 @@
 </nav>
 <!-- Akhir Navigasi -->
 
-<div class="container" id="body-content"></div>
+<div class="container" id="body-content">
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+    </div>
+</div>
 
 <div class="fixed-action-btn">
     <a class="btn-floating btn-large red" id="save">
@@ -67,6 +79,8 @@
                     save.onclick = function () {
                         item.then(function (team) {
                             saveForLater(team);
+                            console.log(`Menyimpan ${team.name} ke daftar favorit`);
+                            M.toast({html: `${team.shortName} favorit!`, classes: 'rounded'});
                             save.style.display = "none";
                         });
                     };
