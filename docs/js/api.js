@@ -206,7 +206,7 @@ function getTeamById() {
 
 function getSavedTeams() {
     getAll().then(function(teams) {
-        if (teams.length > 0) {
+        if (teams.teams.length > 0) {
             putSavedTeams(teams);
         } else {
             const html = `Tidak ada data tersimpan`;
