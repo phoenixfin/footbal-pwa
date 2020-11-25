@@ -1,0 +1,4 @@
+Link deploy:
+
+Firebase hosting: push-notification-4e92b.web.app 
+Github pages: phoenixfin.github.io/football-pwa
