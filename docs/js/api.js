@@ -50,7 +50,7 @@ function putTeams(data, savedList) {
                 </p>
             `;
         if (savedList) {
-            html += `<a class="secondary-content" id="del"><i class="material-icons">delete</i></a>`;
+            html += `<a class="secondary-content" id="${team.tla}-del"><i class="material-icons">delete</i></a>`;
         }
         html += `</li>`;
     });
@@ -58,7 +58,7 @@ function putTeams(data, savedList) {
     document.getElementById("teams").innerHTML = html;
     if (savedList) {
         data.teams.forEach(function (team) {
-            const del = document.getElementById("del");
+            const del = document.getElementById(`${team.tla}-del`);
             del.onclick = function () {
                 destroyById(team.id).then(function(team) {
                     console.log(`Menghapus tim ${team.name} dari daftar favorit`);
