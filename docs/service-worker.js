@@ -27,7 +27,9 @@ workbox.precaching.precacheAndRoute([
     { url: "/icon.png", revision: 1},
     { url: "https://fonts.googleapis.com/icon?family=Material+Icons", revision: 1},
     { url: "https://fonts.gstatic.com/s/materialicons/v67/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2", revision: 1},
-]);
+], {
+    ignoreUrlParametersMatching: [/.*/]
+});
 
 workbox.routing.registerRoute(
     new RegExp('/team.html'),
